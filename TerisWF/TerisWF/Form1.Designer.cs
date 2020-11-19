@@ -1,6 +1,6 @@
 ﻿namespace TerisWF
 {
-    partial class Form1
+    partial class Tetris
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.picBox = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // picBox
+            // 
+            this.picBox.Location = new System.Drawing.Point(26, 12);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(313, 594);
+            this.picBox.TabIndex = 0;
+            this.picBox.TabStop = false;
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.tmrTick);
+            // 
+            // Tetris
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(484, 661);
+            this.Controls.Add(this.picBox);
+            this.DoubleBuffered = true;
+            this.Name = "Tetris";
+            this.Text = "Tetris";
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox picBox;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
