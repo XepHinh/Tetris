@@ -82,16 +82,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Images\background.jpg" />
-    <None Include="Images\background.png" />
-    <Content Include="Images\I.png" />
-    <Content Include="Images\L.png" />
-    <Content Include="Images\L1.png" />
-    <Content Include="Images\O.png" />
-    <Content Include="Images\S.png" />
-    <Content Include="Images\S1.png" />
-    <Content Include="Images\T.png" />
-    <None Include="Resources\rectangle.png" />
+    <Content Include="Textures\background.png" />
+    <Content Include="Textures\L.png" />
+    <Content Include="Textures\I.png" />
+    <Content Include="Textures\L1.png" />
+    <Content Include="Textures\Lock.png" />
+    <Content Include="Textures\O.png" />
+    <Content Include="Textures\S.png" />
+    <Content Include="Textures\S1.png" />
+    <Content Include="Textures\T.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

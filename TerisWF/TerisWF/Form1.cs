@@ -13,13 +13,15 @@ namespace TerisWF
     public partial class Tetris : Form
     {
         Tetromino currentTetromino;
+        Tetromino nextTetromino;
         public Tetris()
         {
             InitializeComponent();
 
             loadCanvas();
 
-            currentTetromino = getRandomTetrominoWithCenterAligned();
+            currentTetromino = getRandomTetrominoWithCenterAligned();   
+            nextTetromino = getNextTetromino();
 
             timer.Tick += tmrTick;
             timer.Interval = 500;
@@ -33,7 +35,7 @@ namespace TerisWF
         int canvasWidth = 10;
         int canvasHeight = 20;
         int[,] canvasDotArray;
-        int dotSize = 25;
+        int dotSize = 23;
         public void loadCanvas()
         {
             //Cai dat kich thuoc pictureBox dua tren kich thuoc diem va so diem
@@ -57,6 +59,22 @@ namespace TerisWF
             picBox.Image = canvasBitmap;
 
             canvasDotArray = new int[canvasWidth, canvasHeight];
+        }
+        private void tmrTick(object sender, EventArgs e)
+        {
+            var isMoveSuccess = moveTetrominoIfPossible(moveDown: 1);
+
+            //Khi khoi xuat hien va cham
+            if (!isMoveSuccess)
+            {
+                canvasBitmap = new Bitmap(workingBitmap);
+                updateCanvasDotArrayWithCurrentShape();
+                //Them khoi moi
+                currentTetromino = nextTetromino;
+                nextTetromino = getNextTetromino();
+
+                clearFilledRowsAndUpdateScore();
+            }
         }
 
         int currentX;
@@ -119,6 +137,8 @@ namespace TerisWF
         {
             workingBitmap = new Bitmap(canvasBitmap);
             workingGraphics = Graphics.FromImage(workingBitmap);
+            
+            Bitmap myImg;
 
             for (int i = 0; i < currentTetromino.Width; i++)
             {
@@ -126,28 +146,43 @@ namespace TerisWF
                 {                    
                     if (currentTetromino.DotMatrix[j, i] == 1)
                     {
-                        workingGraphics.FillRectangle(Brushes.Black, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);                        
+                        switch (currentTetromino.Type)
+                        {
+                            case "I":
+                                myImg = new Bitmap("../../Textures/I.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                            case "L":
+                                myImg = new Bitmap("../../Textures/L.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                            case "L1":
+                                myImg = new Bitmap("../../Textures/L1.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                            case "O":
+                                myImg = new Bitmap("../../Textures/O.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                            case "S":
+                                myImg = new Bitmap("../../Textures/S.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                            case "S1":
+                                myImg = new Bitmap("../../Textures/S1.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                            case "T":
+                                myImg = new Bitmap("../../Textures/T.png");
+                                workingGraphics.DrawImage(myImg, (currentX + i) * dotSize, (currentY + j) * dotSize, dotSize - 1, dotSize - 1);
+                                break;
+                        }
                     }
                 }
             }
             
             picBox.Image = workingBitmap;
-        }
-        private void tmrTick(object sender, EventArgs e)
-        {
-            var isMoveSuccess = moveTetrominoIfPossible(moveDown: 1);
-
-            //Khi khoi xuat hien va cham
-            if (!isMoveSuccess)
-            {
-                canvasBitmap = new Bitmap(workingBitmap);
-                updateCanvasDotArrayWithCurrentShape();
-                //Them khoi moi
-                currentTetromino = getRandomTetrominoWithCenterAligned();
-
-                clearFilledRowsAndUpdateScore();
-            }
-        }
+        }            
         private void updateCanvasDotArrayWithCurrentShape()
         {
             for (int i = 0; i < currentTetromino.Width; i++)
@@ -203,7 +238,8 @@ namespace TerisWF
             }
         }
 
-        int score;
+        int score = 0;
+        int level = 0;
         /// <summary>
         /// Check dieu kien an diem va xoa dong dung
         /// </summary>
@@ -221,6 +257,11 @@ namespace TerisWF
 
                 if (j == -1)
                 {
+                    //Cap nhat diem so
+                    score++;
+                    level = score / 10;
+                    lblScore.Text = " "+score;                                       
+                    lblLevel.Text = " "+level;
                     //cap nhat mang sau khi check
                     for (j = 0; j < canvasWidth; j++)
                     {
@@ -240,13 +281,70 @@ namespace TerisWF
                 for (int j = 0; j < canvasHeight; j++)
                 {
                     canvasGraphics = Graphics.FromImage(canvasBitmap);
-                    canvasGraphics.FillRectangle(
-                    canvasDotArray[i, j] == 1 ? Brushes.Black : Brushes.SlateGray,
-                    i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                    Bitmap myImg = new Bitmap("../../Textures/Lock.png");
+                    if (canvasDotArray[i, j] == 1)
+                    {
+                        canvasGraphics.DrawImage(myImg, i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                    }
+                    else
+                    {
+                        canvasGraphics.FillRectangle(Brushes.SlateGray, i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                    }
                 }
             }
 
             picBox.Image = canvasBitmap;
+        }
+
+        Bitmap nextTetrominoBitmap;
+        Graphics nextTetrominGraphics;
+        private Tetromino getNextTetromino()
+        {
+            var tetromino = getRandomTetrominoWithCenterAligned();
+            
+            //Dinh ngia cac gia tri cua phan nextPicBox
+            nextTetrominoBitmap = new Bitmap(4 * dotSize, 4 * dotSize);
+            nextTetrominGraphics = Graphics.FromImage(nextTetrominoBitmap);
+            
+            //Ve khung hien thi nextTetromino
+            for (int i = 0; i < nextTetrominoBitmap.Width; i++)
+            {
+                for (int j = 0; j < nextTetrominoBitmap.Height; j++)
+                {
+                    nextTetrominGraphics = Graphics.FromImage(nextTetrominoBitmap);
+                    nextTetrominGraphics.FillRectangle(Brushes.SlateGray,
+                    i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                }
+            }
+            
+            //Gan vi tri khoi tao
+            var startX = (4 - tetromino.Width) / 2;
+            var startY = (4 - tetromino.Height) / 2;
+            
+            //Ve len nex pic
+            Bitmap myImg;
+            myImg = new Bitmap("../../Textures/I.png");
+            for (int i = 0; i < tetromino.Height; i++)
+            {
+                for (int j = 0; j < tetromino.Width; j++)
+                {   
+                    
+                    if (tetromino.DotMatrix[i, j] == 1)
+                    {
+                        nextTetrominGraphics.DrawImage(myImg, (startX + j) * dotSize, (startY + i) * dotSize, dotSize - 1, dotSize - 1);
+                    }
+                    else
+                    {
+                        nextTetrominGraphics.FillRectangle(Brushes.SlateGray, (startX + j) * dotSize, (startY + i) * dotSize, dotSize - 1, dotSize - 1);
+                    }
+                                        
+                }
+            }
+
+            picNextTetromino.Size = nextTetrominoBitmap.Size;
+            picNextTetromino.Image = nextTetrominoBitmap;
+
+            return tetromino;
         }
     }
 }
