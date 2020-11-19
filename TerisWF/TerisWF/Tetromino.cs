@@ -12,12 +12,35 @@ namespace TerisWF
         public int Height;
         public string Type;
         public int[,] DotMatrix;
+
+        private int[,] backupDotMatrix;
+        /// <summary>
+        /// Ham xoay cac khoi
+        /// </summary>
+        public void turn()
+        {
+            backupDotMatrix = DotMatrix;
+
+            DotMatrix = new int[Width, Height];
+
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    DotMatrix[i, j] = backupDotMatrix[Height - 1 - j, i];
+                }
+            }
+
+            var temp = Width;
+            Width = Height;
+            Height = temp;
+        }
     }
-    static class TetrominoHandler
+    static class tetrominoHandler
     {
         private static Tetromino[] tetrominoArray;
 
-        static TetrominoHandler()
+        static tetrominoHandler()
         {
             //Khoi tao mang de quan ly cac manh Tetromino
             tetrominoArray = new Tetromino[]

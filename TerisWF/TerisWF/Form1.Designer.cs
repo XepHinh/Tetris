@@ -38,7 +38,7 @@
             // 
             this.picBox.Location = new System.Drawing.Point(26, 12);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(313, 594);
+            this.picBox.Size = new System.Drawing.Size(125, 521);
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
             // 
@@ -51,7 +51,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(484, 661);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.picBox);
             this.DoubleBuffered = true;
             this.Name = "Tetris";
