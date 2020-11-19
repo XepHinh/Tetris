@@ -82,7 +82,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Textures\1.png" />
+    <None Include="Textures\2.png" />
+    <None Include="Textures\3.png" />
+    <None Include="Textures\4.png" />
     <Content Include="Textures\background.png" />
+    <Content Include="Textures\bground.png" />
     <Content Include="Textures\L.png" />
     <Content Include="Textures\I.png" />
     <Content Include="Textures\L1.png" />

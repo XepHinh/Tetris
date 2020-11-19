@@ -24,7 +24,7 @@ namespace TerisWF
             nextTetromino = getNextTetromino();
 
             timer.Tick += tmrTick;
-            timer.Interval = 500;
+            timer.Interval = 600;
             timer.Start();
 
             KeyDown += frmKeyHandle;
@@ -260,8 +260,11 @@ namespace TerisWF
                     //Cap nhat diem so
                     score++;
                     level = score / 10;
-                    lblScore.Text = " "+score;                                       
-                    lblLevel.Text = " "+level;
+
+                    timer.Interval -= 20;
+
+                    lblScore.Text = "Score: "+score;                                       
+                    lblLevel.Text = "Level: "+level;
                     //cap nhat mang sau khi check
                     for (j = 0; j < canvasWidth; j++)
                     {
