@@ -3,8 +3,8 @@ D:\C#\Tetris\TerisWF\TerisWF\bin\Debug\TerisWF.exe
 D:\C#\Tetris\TerisWF\TerisWF\bin\Debug\TerisWF.pdb
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.csprojAssemblyReference.cache
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.Tetris.resources
-D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.Properties.Resources.resources
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.csproj.GenerateResource.cache
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.csproj.CoreCompileInputs.cache
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.exe
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.pdb
+D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.Properties.Resources.resources

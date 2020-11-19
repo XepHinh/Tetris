@@ -43,7 +43,16 @@ namespace TerisWF
             //Tao Bitmap voi kich thuoc cua pictureBox
             canvasBitmap = new Bitmap(picBox.Width, picBox.Height);
             canvasGraphics = Graphics.FromImage(canvasBitmap);
-            canvasGraphics.FillRectangle(Brushes.SlateGray, 0, 0, canvasBitmap.Width, canvasBitmap.Height);
+            canvasGraphics.FillRectangle(Brushes.LightSteelBlue, 0, 0, canvasBitmap.Width, canvasBitmap.Height);
+            for (int i = 0; i < canvasWidth; i++)
+            {
+                for (int j = 0; j < canvasHeight; j++)
+                {
+                    canvasGraphics = Graphics.FromImage(canvasBitmap);
+                    canvasGraphics.FillRectangle(Brushes.SlateGray,
+                    i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                }
+            }
 
             picBox.Image = canvasBitmap;
 
@@ -135,6 +144,8 @@ namespace TerisWF
                 updateCanvasDotArrayWithCurrentShape();
                 //Them khoi moi
                 currentTetromino = getRandomTetrominoWithCenterAligned();
+
+                clearFilledRowsAndUpdateScore();
             }
         }
         private void updateCanvasDotArrayWithCurrentShape()
@@ -180,7 +191,7 @@ namespace TerisWF
                     break;
                 case Keys.Down:
                     horizontalMove++;
-                    break;
+                    break;                
                 default:
                     break;
             }
@@ -190,6 +201,52 @@ namespace TerisWF
             {
                 currentTetromino.turn();
             }
+        }
+
+        int score;
+        /// <summary>
+        /// Check dieu kien an diem va xoa dong dung
+        /// </summary>
+        public void clearFilledRowsAndUpdateScore()
+        {
+            //Kiem tra tuw ng dong
+            for (int i = 0; i < canvasHeight; i++)
+            {
+                int j;
+                for (j = canvasWidth - 1; j >= 0; j--)
+                {
+                    if (canvasDotArray[j, i] == 0)
+                        break;
+                }
+
+                if (j == -1)
+                {
+                    //cap nhat mang sau khi check
+                    for (j = 0; j < canvasWidth; j++)
+                    {
+                        for (int k = i; k > 0; k--)
+                        {
+                            canvasDotArray[j, k] = canvasDotArray[j, k - 1];
+                        }
+
+                        canvasDotArray[j, 0] = 0;
+                    }
+                }
+            }
+
+            //Ve lai cac o khi cap nhat
+            for (int i = 0; i < canvasWidth; i++)
+            {
+                for (int j = 0; j < canvasHeight; j++)
+                {
+                    canvasGraphics = Graphics.FromImage(canvasBitmap);
+                    canvasGraphics.FillRectangle(
+                    canvasDotArray[i, j] == 1 ? Brushes.Black : Brushes.SlateGray,
+                    i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                }
+            }
+
+            picBox.Image = canvasBitmap;
         }
     }
 }

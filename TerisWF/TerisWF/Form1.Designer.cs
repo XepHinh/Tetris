@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tetris));
             this.picBox = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -36,9 +37,11 @@
             // 
             // picBox
             // 
-            this.picBox.Location = new System.Drawing.Point(26, 12);
+            this.picBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBox.BackgroundImage")));
+            this.picBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBox.Location = new System.Drawing.Point(12, 12);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(125, 521);
+            this.picBox.Size = new System.Drawing.Size(274, 543);
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
             // 
@@ -50,10 +53,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(484, 561);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(369, 567);
             this.Controls.Add(this.picBox);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.Black;
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "Tetris";
             this.Text = "Tetris";
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
