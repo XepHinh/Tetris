@@ -24,7 +24,7 @@ namespace TerisWF
             nextTetromino = getNextTetromino();
 
             timer.Tick += tmrTick;
-            timer.Interval = 600;
+            timer.Interval = 500;
             timer.Start();
 
             KeyDown += frmKeyHandle;
@@ -52,7 +52,7 @@ namespace TerisWF
                 {
                     canvasGraphics = Graphics.FromImage(canvasBitmap);
                     canvasGraphics.FillRectangle(Brushes.SlateGray,
-                    i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                    i * dotSize, j * dotSize, dotSize, dotSize);
                 }
             }
 
@@ -203,8 +203,8 @@ namespace TerisWF
             if (currentY < 0)
             {
                 timer.Stop();
-                MessageBox.Show("Game Over");
-                Application.Restart();
+                MessageBox.Show("Game Over!!!");
+                Application.Exit();
             }
         }
 
@@ -261,7 +261,7 @@ namespace TerisWF
                     score++;
                     level = score / 10;
 
-                    timer.Interval -= 20;
+                    timer.Interval -= 10;
 
                     lblScore.Text = "Score: "+score;                                       
                     lblLevel.Text = "Level: "+level;
@@ -291,7 +291,7 @@ namespace TerisWF
                     }
                     else
                     {
-                        canvasGraphics.FillRectangle(Brushes.SlateGray, i * dotSize, j * dotSize, dotSize - 1, dotSize - 1);
+                        canvasGraphics.FillRectangle(Brushes.SlateGray, i * dotSize, j * dotSize, dotSize, dotSize);
                     }
                 }
             }

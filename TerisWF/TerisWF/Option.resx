@@ -117,59 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="on" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\on1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tetris_art" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tetris_art.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tutorial_leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tutorial_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="about_leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start_leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\bground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="option_leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PIC5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="about_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="option_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\PIC21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_speaker.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
 </root>

@@ -16,7 +16,7 @@ namespace TerisWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tetris());
+            Application.Run(new MainMenu());
         }
     }
 }
