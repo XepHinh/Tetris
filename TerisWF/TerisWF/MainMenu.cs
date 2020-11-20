@@ -54,6 +54,7 @@ namespace TerisWF
         private void btn_Start_Click(object sender, EventArgs e)
         {
             Tetris newTetris = new Tetris();
+            this.Hide();
             newTetris.ShowDialog();
         }
         private void btn_Tutorial_Click(object sender, EventArgs e)
@@ -67,8 +68,8 @@ namespace TerisWF
         {
             MessageBox.Show("TEAM PHÁT TRIỂN ỨNG DỤNG\n" +
                 "@Trần Minh Tâm_4501104206\n" +
-                "@Nguyễn Văn Châu_\n" +
-                "@Thiều Quan Bảo TÍn_");
+                "@Nguyễn Văn Châu_4501104024\n" +
+                "@Thiều Quang Bảo TÍn_4501104241");
         }     
         private void btn_Exit_Click(object sender, EventArgs e)
         {

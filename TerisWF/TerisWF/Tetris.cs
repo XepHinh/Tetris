@@ -46,7 +46,7 @@ namespace TerisWF
             player = new SoundPlayer();
             player.SoundLocation = @"../../Resources/clear.wav";
 
-            if (check) player.Play();
+            if (check) player.PlaySync();
             else player.Stop();
         }
 
@@ -300,6 +300,8 @@ namespace TerisWF
 
                         canvasDotArray[j, 0] = 0;
                     }
+
+                    soudTracks(true);
                 }
             }
 
