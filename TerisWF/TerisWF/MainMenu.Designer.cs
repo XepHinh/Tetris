@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Option = new System.Windows.Forms.PictureBox();
+            this.btn_Exit = new System.Windows.Forms.PictureBox();
             this.btn_About = new System.Windows.Forms.PictureBox();
             this.btn_Tutorial = new System.Windows.Forms.PictureBox();
             this.btn_Start = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Option)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_About)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Tutorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Start)).BeginInit();
@@ -45,7 +45,7 @@
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.BackgroundImage = global::TerisWF.Properties.Resources.PIC5;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.btn_Option);
+            this.panel1.Controls.Add(this.btn_Exit);
             this.panel1.Controls.Add(this.btn_About);
             this.panel1.Controls.Add(this.btn_Tutorial);
             this.panel1.Controls.Add(this.btn_Start);
@@ -54,23 +54,23 @@
             this.panel1.Size = new System.Drawing.Size(258, 456);
             this.panel1.TabIndex = 0;
             // 
-            // btn_Option
+            // btn_Exit
             // 
-            this.btn_Option.Image = global::TerisWF.Properties.Resources.option_leave;
-            this.btn_Option.Location = new System.Drawing.Point(36, 184);
-            this.btn_Option.Name = "btn_Option";
-            this.btn_Option.Size = new System.Drawing.Size(187, 50);
-            this.btn_Option.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_Option.TabIndex = 3;
-            this.btn_Option.TabStop = false;
-            this.btn_Option.Click += new System.EventHandler(this.btn_Option_Click);
-            this.btn_Option.MouseLeave += new System.EventHandler(this.btn_Option_MouseLeave);
-            this.btn_Option.MouseHover += new System.EventHandler(this.btn_Option_MouseHover);
+            this.btn_Exit.Image = global::TerisWF.Properties.Resources.exit_leave;
+            this.btn_Exit.Location = new System.Drawing.Point(36, 296);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(187, 50);
+            this.btn_Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_Exit.TabIndex = 3;
+            this.btn_Exit.TabStop = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            this.btn_Exit.MouseLeave += new System.EventHandler(this.btn_Exit_MouseLeave);
+            this.btn_Exit.MouseHover += new System.EventHandler(this.btn_Exit_MouseHover);
             // 
             // btn_About
             // 
             this.btn_About.Image = global::TerisWF.Properties.Resources.about_leave;
-            this.btn_About.Location = new System.Drawing.Point(36, 296);
+            this.btn_About.Location = new System.Drawing.Point(36, 240);
             this.btn_About.Name = "btn_About";
             this.btn_About.Size = new System.Drawing.Size(187, 50);
             this.btn_About.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +83,7 @@
             // btn_Tutorial
             // 
             this.btn_Tutorial.Image = global::TerisWF.Properties.Resources.tutorial_leave;
-            this.btn_Tutorial.Location = new System.Drawing.Point(36, 240);
+            this.btn_Tutorial.Location = new System.Drawing.Point(36, 184);
             this.btn_Tutorial.Name = "btn_Tutorial";
             this.btn_Tutorial.Size = new System.Drawing.Size(187, 50);
             this.btn_Tutorial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Option)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_About)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Tutorial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Start)).EndInit();
@@ -133,9 +133,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox btn_Option;
         private System.Windows.Forms.PictureBox btn_About;
         private System.Windows.Forms.PictureBox btn_Tutorial;
         private System.Windows.Forms.PictureBox btn_Start;
+        private System.Windows.Forms.PictureBox btn_Exit;
     }
 }

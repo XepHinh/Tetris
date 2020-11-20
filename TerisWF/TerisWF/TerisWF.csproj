@@ -105,13 +105,13 @@
     <None Include="Textures\3.png" />
     <None Include="Textures\4.png" />
     <None Include="Resources\tetris_art.jpg" />
-    <None Include="Resources\off.svg.png" />
     <None Include="Resources\on.png" />
     <None Include="Resources\off.png" />
-    <None Include="Resources\on1.png" />
     <None Include="Resources\hm.png" />
     <Content Include="Textures\background.png" />
     <Content Include="Textures\bground.png" />
+    <None Include="Textures\exit.png" />
+    <None Include="Textures\exit_hove.png" />
     <Content Include="Textures\L.png" />
     <Content Include="Textures\I.png" />
     <Content Include="Textures\L1.png" />

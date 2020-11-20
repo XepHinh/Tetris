@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace TerisWF
 {
@@ -20,6 +21,8 @@ namespace TerisWF
 
             loadCanvas();
 
+            soudTracks(true);
+
             currentTetromino = getRandomTetrominoWithCenterAligned();   
             nextTetromino = getNextTetromino();
 
@@ -28,7 +31,24 @@ namespace TerisWF
             timer.Start();
 
             KeyDown += frmKeyHandle;
-        }               
+        }
+        SoundPlayer player;
+        private void soudTracks(bool check)
+        {
+            player = new SoundPlayer();
+            player.SoundLocation = @"../../Resources/Tetris.wav";
+
+            if (check) player.PlayLooping();
+            else player.Stop();
+        }
+        private void clearSound(bool check)
+        {
+            player = new SoundPlayer();
+            player.SoundLocation = @"../../Resources/clear.wav";
+
+            if (check) player.Play();
+            else player.Stop();
+        }
 
         Bitmap canvasBitmap;
         Graphics canvasGraphics;
@@ -204,6 +224,7 @@ namespace TerisWF
             {
                 timer.Stop();
                 MessageBox.Show("Game Over!!!");
+                soudTracks(false);
                 Application.Exit();
             }
         }
@@ -257,6 +278,10 @@ namespace TerisWF
 
                 if (j == -1)
                 {
+                    //Am thanh xoa
+                    soudTracks(false);
+                    clearSound(true);
+
                     //Cap nhat diem so
                     score++;
                     level = score / 10;
