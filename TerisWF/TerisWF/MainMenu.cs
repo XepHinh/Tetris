@@ -54,7 +54,7 @@ namespace TerisWF
         private void btn_Start_Click(object sender, EventArgs e)
         {
             Tetris myTetris = new Tetris();
-            //this.Hide();
+            this.Hide();
             myTetris.Show();
             
         }

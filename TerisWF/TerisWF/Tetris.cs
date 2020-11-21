@@ -224,10 +224,24 @@ namespace TerisWF
             {
                 timer.Stop();
                 soudTracks(false);
-                                
-                this.Dispose();
-                MessageBox.Show("Game Over!!!");
+
+                //this.Dispose();
+                //MessageBox.Show("Game Over!!!");
                 //this.Close();
+
+                DialogResult dialog = MessageBox.Show("Bạn có muôn ăn hành lần nữa ????", "Game over!!!!",
+                MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    //Tetris restartTetris = new Tetris();
+                    //restartTetris.Show();
+                    //this.Dispose();
+                    
+                }
+                else if (dialog == DialogResult.No)
+                {
+                    Application.Exit();
+                }
 
             }
         }
@@ -379,12 +393,10 @@ namespace TerisWF
 
             return tetromino;
         }
-
-
         private void Tetris_FormClosed(object sender, FormClosedEventArgs e)
         {
             soudTracks(false);
-            this.Dispose();
+            Application.Exit();
         }
     }
 }
