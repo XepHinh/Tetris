@@ -138,6 +138,7 @@
             this.MinimizeBox = false;
             this.Name = "Tetris";
             this.Text = "Tetris";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tetris_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.picNextTetromino)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);

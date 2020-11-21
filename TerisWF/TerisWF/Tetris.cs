@@ -223,9 +223,12 @@ namespace TerisWF
             if (currentY < 0)
             {
                 timer.Stop();
-                MessageBox.Show("Game Over!!!");
                 soudTracks(false);
-                Application.Exit();
+                                
+                this.Dispose();
+                MessageBox.Show("Game Over!!!");
+                //this.Close();
+
             }
         }
 
@@ -375,6 +378,13 @@ namespace TerisWF
             picNextTetromino.Image = nextTetrominoBitmap;
 
             return tetromino;
+        }
+
+
+        private void Tetris_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            soudTracks(false);
+            this.Dispose();
         }
     }
 }

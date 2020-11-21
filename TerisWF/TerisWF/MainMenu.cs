@@ -53,9 +53,10 @@ namespace TerisWF
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            Tetris newTetris = new Tetris();
-            this.Hide();
-            newTetris.ShowDialog();
+            Tetris myTetris = new Tetris();
+            //this.Hide();
+            myTetris.Show();
+            
         }
         private void btn_Tutorial_Click(object sender, EventArgs e)
         {
@@ -75,5 +76,19 @@ namespace TerisWF
         {
             Application.Exit();
         }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn thật sự muốn thoát ????", "Exit",
+                MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }else if (dialog == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
     }
 }

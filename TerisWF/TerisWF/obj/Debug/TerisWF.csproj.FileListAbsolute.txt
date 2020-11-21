@@ -9,4 +9,3 @@ D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.exe
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.pdb
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.Properties.Resources.resources
 D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.MainMenu.resources
-D:\C#\Tetris\TerisWF\TerisWF\obj\Debug\TerisWF.Properties.Option_menu.resources

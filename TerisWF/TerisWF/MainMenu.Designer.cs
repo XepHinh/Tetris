@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Exit = new System.Windows.Forms.PictureBox();
             this.btn_About = new System.Windows.Forms.PictureBox();
@@ -114,7 +115,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(357, 551);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.Location = new System.Drawing.Point(100, 100);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(373, 590);
             this.MinimizeBox = false;
